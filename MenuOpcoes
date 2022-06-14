@@ -1,0 +1,77 @@
+import java.util.Scanner;
+
+public class MenuOpcoes {
+
+	public static void main(String[] args) {
+		// Programa contendo menu com as opções: Média aritmética, Média Ponderada, Sair.
+		
+		Scanner menu = new Scanner (System.in);
+		Double nota1, nota2;
+		Scanner leitor = new Scanner(System.in);
+				
+		while (true) {
+			
+		System.out.print("Menu ");
+		
+		System.out.print("\nOpção 1 - Média aritmética ");
+		
+		System.out.print("\nOpção 2 - Média ponderada ");
+		
+		System.out.print("\nOpção 3 - Sair ");
+		
+		System.out.print("\nDigite uma opção:" );
+		
+		int opcao = menu.nextInt();
+		
+		if (opcao == 3) {
+			menu.close();
+		}
+		
+		switch (opcao) {
+		case 1:
+			System.out.print("\nMédia aritmética Selecionada ");
+			
+			System.out.println("\nDigite a primeira nota:");
+			nota1 = leitor.nextDouble();
+			
+			System.out.println("\nDigite a segunda nota:");
+			nota2 = leitor.nextDouble();
+			
+			Double soma = nota1 + nota2;
+			
+			Double mediaaritmetica = soma / 2;
+			
+			System.out.printf("MEDIA = %.1f", mediaaritmetica);
+			break;
+		
+		case 2:
+			System.out.print("\nMédia ponderada Selecionada ");
+			Scanner input = new Scanner(System.in);
+			Double nota11, nota22, nota33;
+			Double peso11, peso22, peso33;
+			
+		    Double nota11 = input.nextDouble();
+		    Double peso11 = input.nextDouble();
+		    
+		    Double nota21 = input.nextDouble();
+		    Double peso21 = input.nextDouble();
+		    
+		    Double nota31 = input.nextDouble();
+		    Double peso31 = input.nextDouble();    
+
+		    Double mediaponderada = ((nota11 * peso11   ) + (nota21 *  peso21  ) + (nota31 *  peso31  )) / (peso11+peso21+peso31);
+		    
+		    System.out.printf("MEDIA = %.1f", mediaponderada);
+			break;
+			
+		default:
+			System.out.print("\nOpção Inválida");
+			break;
+			
+		}
+		}
+		
+
+	}
+
+}
